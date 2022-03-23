@@ -1,0 +1,7 @@
+C:\Users\Orbit\source\repos\P4Z2\bin\Debug\P4Z2.exe.config
+C:\Users\Orbit\source\repos\P4Z2\bin\Debug\P4Z2.exe
+C:\Users\Orbit\source\repos\P4Z2\bin\Debug\P4Z2.pdb
+C:\Users\Orbit\source\repos\P4Z2\obj\Debug\P4Z2.csproj.AssemblyReference.cache
+C:\Users\Orbit\source\repos\P4Z2\obj\Debug\P4Z2.csproj.CoreCompileInputs.cache
+C:\Users\Orbit\source\repos\P4Z2\obj\Debug\P4Z2.exe
+C:\Users\Orbit\source\repos\P4Z2\obj\Debug\P4Z2.pdb
