@@ -14,9 +14,14 @@ namespace P4Lab2
             string connection = "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = Northwind; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
 
             SqlConnection polaczenie = new SqlConnection(connection);
-
-            string zapytanie = "INSERT INTO dbo.Region (RegionID,RegionDescription) VALUES('10','P4ATH')";
+            
+            
+            string zapytanie = "INSERT INTO  dbo.Region (RegionID,RegionDescription) VALUES(@RegionID, @RegionDescription)";
             SqlCommand cmd = new SqlCommand(zapytanie, polaczenie);
+
+
+            cmd.Parameters.AddWithValue("@RegionID", "6");
+            cmd.Parameters.AddWithValue("@RegionDescription", "Zachód");
 
             try
             {
