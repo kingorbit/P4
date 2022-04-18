@@ -35,7 +35,7 @@ var insertresult = con.Execute("INSERT INTO Region(RegionID, RegionDescription) 
 //    Console.WriteLine($"{item.ProductName}: {item.Category.CategoryName}");
 //}
 
-var joinresult2 = con.Query<Territory, Region, Territory>("SELECT * FROM Territories t JOIN Region r on t.TerritoriesID = r.TerritoriesID",
+var joinresult2 = con.Query<Territory, Region, Territory>("SELECT * FROM Region AS r JOIN Territories AS t on r.RegionID = t.RegionID WHERE TerritoryDescription LIKE @Test",
     (territory, region) =>
     {
         territory.Region = region;
