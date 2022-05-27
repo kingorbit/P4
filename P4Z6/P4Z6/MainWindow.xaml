@@ -12,11 +12,8 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="1" Content="Naciśnij" HorizontalAlignment="Left" Margin="150,157,0,0" VerticalAlignment="Top" Height="52" Width="160" Click="Button_Click_1"/>
+        <Button Grid.Column="1" Content="Naciśnij" HorizontalAlignment="Left" Margin="75,150,0,0" VerticalAlignment="Top" Height="100" Width="250" Click="Button_Click"/>
 
-        <StackPanel>
-            <Label x:Name="l1" Content="Zobacz tu" HorizontalAlignment="Left" Margin="116,132,0,0" VerticalAlignment="Top"/>
-
-        </StackPanel>
+        <StackPanel x:Name="StackPanel" Grid.Column="0" Orientation="Horizontal"/>
     </Grid>
 </Window>

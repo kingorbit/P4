@@ -20,16 +20,24 @@ namespace P4Z6
     /// </summary>
     public partial class MainWindow : Window
     {
-        public int Liczba { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
-            Liczba = 0;
-        }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            l1.Content = Liczba++;
 
+        }
+
+
+        int liczba = 0;
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            StackPanel.Children.Add(new Label()
+            {
+                Content = liczba,
+
+            });
+            liczba++;
         }
     }
 }
