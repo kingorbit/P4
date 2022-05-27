@@ -8,8 +8,9 @@ using Dapper;
 
 
 
-public class Region
+internal class Region
 {
 	public int RegionID { get; set; }
 	public string RegionDescription { get; set; }
+	public Territories Territories { get; set; }
 }
