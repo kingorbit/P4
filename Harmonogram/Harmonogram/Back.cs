@@ -6,17 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
+
 class Back
 {
 
-    public static void showOrder(HarmonogramDb db) // DZIALA
+    public static void showOrder(HarmonogramDb db) 
     {
         foreach (var k in db.Zlecenia)
         {
             Console.WriteLine(k);
         }
     }
-    public static void addOrder(HarmonogramDb db) // DZIALA
+    public static void addOrder(HarmonogramDb db) 
     {
         foreach (var back in db.Pracownicy)
         {
@@ -83,7 +84,7 @@ class Back
             Console.WriteLine("Data rozpoczecia musi być liczbą");
         }
     }
-    public static void removeOrder(HarmonogramDb db) // DZIALA
+    public static void removeOrder(HarmonogramDb db) 
     {
         Console.WriteLine("Wprowadz id zlecenia do usunięcia:");
 
@@ -103,7 +104,7 @@ class Back
         }
     }
 
-    public static void findOrder(HarmonogramDb db) // DZIALA
+    public static void findOrder(HarmonogramDb db) 
     {
         Console.WriteLine("Wprowadź szukaną frazę.");
         string fraza = Console.ReadLine();
@@ -115,7 +116,7 @@ class Back
             Console.WriteLine(k);
         }
     }
-    public static void showEmploye(HarmonogramDb db) // DZIALA 
+    public static void showEmploye(HarmonogramDb db) 
     {
         foreach (var back in db.Pracownicy)
         {
@@ -123,7 +124,7 @@ class Back
         }
     }
     
-    public static void addEmploye(HarmonogramDb db) // DZIALA 
+    public static void addEmploye(HarmonogramDb db)
     {
         Console.WriteLine("Podaj imie pracownika:");
         string imie = Console.ReadLine();
@@ -142,7 +143,7 @@ class Back
         db.Pracownicy.Add(back);
         db.SaveChanges();
     }
-    public static void removeEmploye(HarmonogramDb db) // nie dziala
+    public static void removeEmploye(HarmonogramDb db) 
     {
         Console.WriteLine("Wprowadz id pracownika do usunięcia:");
 
@@ -161,7 +162,7 @@ class Back
             }
         }
     }
-    public static void findEmployers(HarmonogramDb db) // DZIALA
+    public static void findEmployers(HarmonogramDb db)
     {
         Console.WriteLine("Wprowadź nazwisko pracownika");
         string fraza = Console.ReadLine();
