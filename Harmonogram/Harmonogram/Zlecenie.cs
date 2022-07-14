@@ -20,5 +20,5 @@ class Zlecenie
     }
 }
 
-//INSERT INTO Zlecenia(Nazwa, DataRozpoczecia, DataZakonczenia)
-//VALUES('Aptiv', '2021-10-10', '2021-10-20');
+//INSERT INTO Zlecenia(Nazwa, DataRozpoczecia, DataZakonczenia, PracownikId)
+//VALUES('Aptiv', '2021-10-10 20:00', '2021-10-20 10:00', 1);

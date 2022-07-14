@@ -16,7 +16,7 @@ class HarmonogramDb : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Harmonogram2;Trusted_Connection=True;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Harmonogram4;Trusted_Connection=True;MultipleActiveResultSets=true");
         }
     }
     public DbSet<Zlecenie> Zlecenia { get; set; }

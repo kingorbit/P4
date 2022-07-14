@@ -14,7 +14,7 @@ class Pracownik
     public ICollection<Zlecenie> Zlecenia { get; set; }
     public override string ToString()
     {
-        return $"{Imie} {Nazwisko} {Email}";
+        return $" Imie: {Imie} Nazwisko: {Nazwisko} Email: {Email}";
     }
 }
 //INSERT INTO Pracownicy(Imie, Nazwisko, Email)
