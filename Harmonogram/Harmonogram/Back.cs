@@ -68,34 +68,27 @@ class Back
             Console.WriteLine(k);
         }
         Console.WriteLine("Podaj id zlecenia");
-            if (int.TryParse(Console.ReadLine(), out int id))
+        if (int.TryParse(Console.ReadLine(), out int id))
+        {
+            var zlecenie = db.Zlecenia.Find(id);
+            if (zlecenie != null)
             {
-                var zlecenie = db.Zlecenia.Find(id);
-                if (zlecenie != null)
-                {
-                    Console.WriteLine("Wpisz date zakonczenia");
-                    Console.WriteLine("Pamiętaj aby data była w formacie: YYYY-MM-DD HH:MM:SS");
-                    DateTime datazakonczenia = DateTime.Parse(Console.ReadLine());
-                    Zlecenie k = new Zlecenie()
-                    {
-                        //Id = id,
-                        DataZakonczenia = datazakonczenia,
-                        Nazwa = zlecenie.Nazwa,
-                        DataRozpoczecia = zlecenie.DataRozpoczecia,
-                        PracownikId = zlecenie.PracownikId
-                    };
-
-                    db.Zlecenia.Update(k);
-                    db.SaveChanges();
-                    Console.WriteLine("Pomyślnie zakończono zlecenie.");
-                }
-                else
-                {
-                    Console.WriteLine("Brak zlecenia o podanym ID.");
-                };
+                zlecenie.Id = id;
+                Console.WriteLine("Wpisz date zakonczenia");
+                Console.WriteLine("Pamiętaj aby data była w formacie: YYYY-MM-DD HH:MM:SS");
+                DateTime datazakonczenia = DateTime.Parse(Console.ReadLine());
+                zlecenie.DataZakonczenia = datazakonczenia;
+                db.Zlecenia.Update(zlecenie);
+                db.SaveChanges();
+                Console.WriteLine("Pomyślnie zakończono zlecenie.");
             }
+            else
+            {
+                Console.WriteLine("Brak zlecenia o podanym ID.");
+            };
+        }
     }
-    public static void removeOrder(HarmonogramDb db)
+public static void removeOrder(HarmonogramDb db)
     {
         Console.WriteLine("Podaj id zlecenia do usunięcia:");
         foreach (var k in db.Zlecenia)
@@ -216,18 +209,15 @@ class Back
             var pracownik = db.Pracownicy.Find(id);
             if (pracownik != null)
             {
+                pracownik.Id = id;
                 Console.WriteLine("Wpisz nowy email");
                 string email = Console.ReadLine();
-                Pracownik k = new Pracownik()
-                {
-                    //Id = id,
-                    Imie = pracownik.Imie,
-                    Nazwisko = pracownik.Nazwisko,
-                    Email = email
-                };
-                db.Pracownicy.Update(k);
+                pracownik.Email = email;
+                db.Pracownicy.Update(pracownik);
                 db.SaveChanges();
-                Console.WriteLine("Pomyślnie zmienione email");
+                Console.WriteLine("Pomyślnie zmienione email pracownika.");
+
+
             }
             else
             {
@@ -236,4 +226,5 @@ class Back
         }
     }
 };
+
 
