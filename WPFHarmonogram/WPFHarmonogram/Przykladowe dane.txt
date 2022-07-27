@@ -1,0 +1,23 @@
+Przykładowe dane:
+
+insert into Zlecenia values
+('Fideltronik',150, 100000,0),
+('Aptiv',100,25000,0),
+('Motorola',25000, 500000000,0),
+('Samsung',15, 1000,0),
+('Nokia',10, 500000,0),
+('Asusv2',2000, 350000,0),
+('Samsungv3', 200, 2000,0)
+
+insert into Etapy values
+('Montaz Automatyczny'),
+('Montaz Reczny'),
+('Montaz Finalny'),
+('Test Wizualny'),
+('Test Funkcjonalny'),
+('Pakowanie'),
+('Wysylka do klienta')
+
+Do poprawy:
+jesli w trakcie ---> nie mozna rozpoczynac i edytowac 
+nie mozna edytowac pol id, w trakcie, zlecenieid, etapid, aktualizacja
