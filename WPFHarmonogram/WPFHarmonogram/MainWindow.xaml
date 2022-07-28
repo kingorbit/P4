@@ -7,16 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1200">
     <Grid Background="SlateGray">
-        <DataGrid x:Name="zleceniagrid" Margin="10,34,903,66" FontSize="14" FontWeight="Bold"  Foreground="black"/>
+        <DataGrid x:Name="zleceniagrid" Margin="10,34,903,66" FontSize="14" FontWeight="Bold"  Foreground="black">
+        </DataGrid>
         <Button x:Name="usunzlecenie" Content="Usuń" HorizontalAlignment="Left" Margin="207,377,0,0" VerticalAlignment="Top" Width="90" Click="usunZlecenieBtn_Click" FontSize="14" FontWeight="Bold" Foreground="#FFF5F1F1" Background="DimGray" Height="36"/>
         <Button x:Name="dodajzlecenie" Content="Dodaj" HorizontalAlignment="Left" Margin="10,377,0,0" VerticalAlignment="Top" Width="90" Click="dodajZlecenieBtn_Click" FontSize="14" FontWeight="Bold" Foreground="#FFF5F1F1" Background="DimGray" Height="36"/>
-        <Label x:Name="zlecenieng" Content="Zlecenia" HorizontalAlignment="Left" Margin="103,1,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="#FFF5F1F1"/>
+        <Label  Content="Zlecenia" HorizontalAlignment="Left" Margin="103,1,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="#FFF5F1F1"/>
         <DataGrid x:Name="podgladGrid" Margin="525,34,10,66" FontSize="14" FontWeight="Bold" Foreground="black" Height="334"/>
-        <Label Content="Harmonogram&#xD;&#xA;" HorizontalAlignment="Left" Margin="783,1,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="#FFF5F1F1"/>
+        <Label Content="Harmonogram" HorizontalAlignment="Left" Margin="783,1,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="#FFF5F1F1"/>
         <Button x:Name="rozpocznijBtn" Content="Rozpocznij" HorizontalAlignment="Left" Margin="613,377,0,0" VerticalAlignment="Top" Click="startBtn_Click" FontSize="14" FontWeight="Bold" Foreground="#FFF5F1F1" Background="DimGray" Width="120" Height="45"/>
         <Button x:Name="edytujBtn" Content="Edytuj" HorizontalAlignment="Left" Margin="807,377,0,0" VerticalAlignment="Top" Click="edytujBtn_Click" FontSize="14" FontWeight="Bold" Foreground="#FFF5F1F1" Background="DimGray" Width="120" Height="45"/>
         <Button x:Name="zakonczBtn" Content="Zakoncz" HorizontalAlignment="Left" Margin="1014,377,0,0" VerticalAlignment="Top" Click="zakonczBtn_Click" FontSize="14" FontWeight="Bold" Foreground="#FFF5F1F1" Background="DimGray" Width="120" Height="45"/>
-        <DataGrid x:Name="etapyGrid" Margin="302,34,680,66" FontSize="14" FontWeight="Bold" Foreground="black" Height="334.04"/>
+        <DataGrid x:Name="etapyGrid" IsReadOnly="True" Margin="302,34,680,66" FontSize="14" FontWeight="Bold" Foreground="black" Height="334.04"/>
         <Button x:Name="usunetap" Content="Usuń" HorizontalAlignment="Left" Margin="430,377,0,0" VerticalAlignment="Top" Width="90" Click="usunEtapBtn_Click" FontSize="14" FontWeight="Bold" Foreground="#FFF5F1F1" Background="DimGray" Height="36"/>
         <Button x:Name="dodajetap" Content="Dodaj" HorizontalAlignment="Left" Margin="302,376,0,0" VerticalAlignment="Top" Width="90" Click="dodajEtapBtn_Click" FontSize="14" FontWeight="Bold" Foreground="#FFF5F1F1" Background="DimGray" Height="36"/>
         <Label x:Name="etapng" Content="Etapy Produkcji" HorizontalAlignment="Left" Margin="333,0,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="#FFF5F1F1"/>

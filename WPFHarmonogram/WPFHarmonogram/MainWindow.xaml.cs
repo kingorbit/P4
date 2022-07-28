@@ -43,22 +43,25 @@ namespace WPFHarmonogram
         {
             DodajZlecenie dz = new DodajZlecenie(this);
             dz.Show();
-            this.IsEnabled = false;
         }
 
         private void usunZlecenieBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (zleceniagrid != null && zleceniagrid.SelectedItem is Zlecenie)
+            Zlecenie zlecenie = zleceniagrid.SelectedItem as Zlecenie;
+            if (zleceniagrid == null && zleceniagrid.SelectedItem is not Zlecenie)
             {
-                Zlecenie zlecenie = zleceniagrid.SelectedItem as Zlecenie;
+                MessageBox.Show("Musisz wybrać pozycje do usunięcia!", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            if(zlecenie.Wtrakcie == true)
+            {
+                MessageBox.Show("Zlecenie jest w produkcji wiec nie możesz go usunąć!", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
                 db.Zlecenia.Remove(zlecenie);
                 db.SaveChanges();
                 MessageBox.Show("Pomyślnie usunięto zlecenie!", "Zadanie wykonane", MessageBoxButton.OK, MessageBoxImage.Information);
                 Load();
-            }
-            else
-            {
-                MessageBox.Show("Musisz wybrać pozycje do usunięcia!", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -133,13 +136,17 @@ namespace WPFHarmonogram
 
         private void edytujZlecenieBtn_Click(object sender, RoutedEventArgs e)
         {
+            Zlecenie zlecenie = zleceniagrid.SelectedItem as Zlecenie;
             if (zleceniagrid.SelectedItem == null && zleceniagrid.SelectedItem is not Zlecenie)
             {
                 MessageBox.Show("Wybierz zlecenie z tabeli Zlecenia!", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            if (zlecenie.Wtrakcie == true)
+            {
+                MessageBox.Show("Zlecenie jest w produkcji wiec nie możesz go edytować!", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             else
             {
-                Zlecenie zlecenie = zleceniagrid.SelectedItem as Zlecenie;
                 db.Zlecenia.Update(zlecenie);
                 db.SaveChanges();
                 MessageBox.Show("Pomyślnie zaktualizowano zlecenie!", "Zadanie wykonane", MessageBoxButton.OK, MessageBoxImage.Information);

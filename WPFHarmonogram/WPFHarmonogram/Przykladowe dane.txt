@@ -19,5 +19,5 @@ insert into Etapy values
 ('Wysylka do klienta')
 
 Do poprawy:
-jesli w trakcie ---> nie mozna rozpoczynac i edytowac 
 nie mozna edytowac pol id, w trakcie, zlecenieid, etapid, aktualizacja
+po zakonczeniu zlecenia zmienia status wtrakcie na false
